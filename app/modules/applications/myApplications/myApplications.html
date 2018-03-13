@@ -87,12 +87,12 @@
   <div class="cui-loading__container" ng-if="base.loader.for['myApplications.reloadingApps']">
     <div class="cui-loading--center"><div class="cui-loading"></div></div>
   </div>
-
+<div class="cui-media__title">{{myApplications.heartRate[0].datapoints[0].value}}</div>
   <!-- No applications message -->
-  <p ng-if="myApplications.list.length===0">{{'cui-no-applications' | translate}}</p>
+  <p ng-if="myApplications.heartRate.length===0">{{'cui-no-applications' | translate}}</p>
   <p class="cui-users__password-success" style="color:red; margin:20px; text-align:center" ng-if="base.apiError.for['myApplications.apps']">{{'error-generic'|translate}}</p>
   <div class="cui-applications__manage-apps" >
-    <div class="cui-tile" ng-repeat="application in myApplications.viewList"ng-class="{'last-item':($index+1)%5==0}">
+    <div class="cui-tile" ng-repeat="application in myApplications.heartRate"ng-class="{'last-item':($index+1)%5==0}">
       <div style="height:100%">
         <div class="cui-tile__title">
         </div>
@@ -101,7 +101,8 @@
             <div class="cui-media__image-container">
               <a ng-href="{{application.mangledUrl}}" target="_blank"><div class="cui-media__image" cui-avatar-color-class-prefix="cui-avatar__color" cui-avatar-color-count="5" cui-avatar-names="application.name" cui-avatar-cuii18n-filter cui-avatar="application.iconUrl"></div></a>
             </div>
-            <div class="cui-media__title">{{application.name|cuiI18n}}</div>
+            <div class="cui-media__title">{{application.datapoints[0].value}}</div>
+            <div class="cui-media__title">{{application.datapoints[1].value}}</div>
           </div>
           <!-- <div class="cui-media__title">{{'description'|translate}}</div>
           <div>{{application.description|cuiI18n}}</div>   --> 

@@ -6,6 +6,12 @@
 
 <!-- My Applications -->
 <div class="cui-desktop-menu__option" ui-sref="applications.myApplications" ui-sref-active-nested="active" ng-if="base.user.id" ng-click="base.menu.desktop.close()">
+  <span class="cui-desktop-menu__option-name">{{'users-heartrate' | translate}}</span>
+  <cui-icon cui-svg-icon="cui:applications_v2" svg-class="cui-desktop-menu__icon" preserveAspectRatio="xMidYMid meet"></cui-icon>
+</div>
+
+<!-- My Applications -->
+<div class="cui-desktop-menu__option" ui-sref="applications.myApplications" ui-sref-active-nested="active" ng-if="base.user.id" ng-click="base.menu.desktop.close()">
   <span class="cui-desktop-menu__option-name">{{'my-applications' | translate}}</span>
   <cui-icon cui-svg-icon="cui:applications_v2" svg-class="cui-desktop-menu__icon" preserveAspectRatio="xMidYMid meet"></cui-icon>
 </div>

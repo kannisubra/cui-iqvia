@@ -1,10 +1,27 @@
 angular.module('applications')
-.controller('myApplicationsCtrl', function(API,APIError,APIHelpers,DataStorage,Loader,User,$filter,$pagination,$q,$scope,$state,$stateParams) {
+.controller('myApplicationsCtrl', function(API,APIError,APIHelpers,DataStorage,Loader,User,$filter,$pagination,$q,$scope,$state,$stateParams,$http) {
 	const myApplications = this
     const userId = User.user.id
     const loaderName = 'myApplications.'
     let checkedLocalStorage = false
-
+   API.cui.getUsersHeartRateHistory({'qs':[['sortBy','-creation'],['eventTemplateId','ef6928b8-cd4e-43c8-8862-71f5dbae1137']]})
+            .then(res=>{
+                    myApplications.heartRate = res;
+            console.log("kanni"+myApplications.heartRate[0].datapoints[0].value);
+        }).fail(err=>{
+                console.log(err);
+               
+        }) 
+    /*$http({
+        method : "GET",
+        url : "https://api.covapp.io/eventaudit/v1/eventAudits?sortBy=-creation&eventTemplateId=ef6928b8-cd4e-43c8-8862-71f5dbae1137"
+    }).then(function mySuccess(response) {
+        console.log(response);
+        $scope.myWelcome = response.data;
+    }, function myError(response) {
+        $scope.myWelcome = response.statusText;
+    });*/
+        
     // HELPER FUNCTIONS END -----------------------------------------------------------------------------------
     const getCountsOfcategories=()=>{
         myApplications.categories.forEach((category,index)=>{
