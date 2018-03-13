@@ -38,6 +38,22 @@ module.exports = function(grunt,config){
             ],
             dest: '<%= config.buildDir %>/'
         },
+        {
+         src: 'img/**/*',
+         dest: '<%= config.buildDir %>/'
+        },
+        {
+         src: 'css/**/*',
+         dest: '<%= config.buildDir %>/'
+        },
+        {
+         src: 'fonts/**/*',
+         dest: '<%= config.buildDir %>/'
+        },
+        {
+         src: 'html/**/*',
+         dest: '<%= config.buildDir %>/'
+        },
         appCustom,
         nonConcatFolder
       ]
