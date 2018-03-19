@@ -10,14 +10,26 @@ angular.module('applications',[])
     $stateProvider
         .state('applications', {
             url: '/applications',
-            template: '<div ui-view class="cui-applications"></div>',
+            template: '<div ui-view class="cui-applications test-carlito"></div>',
             access: loginRequired,
             abstract: true
+        })
+        .state('applications.allTrials', {
+            url: '?page&pageSize&service.category',
+            templateUrl: templateBase + 'myApplications/allTrials.html',
+            controller: returnCtrlAs('allTrials'),
+            access:loginRequired
         })
         .state('applications.myApplications', {
             url: '?page&pageSize&service.category',
             templateUrl: templateBase + 'myApplications/myApplications.html',
             controller: returnCtrlAs('myApplications'),
+            access:loginRequired
+        })
+        .state('applications.fitbitData1', {
+            url: '?page&pageSize&service.category',
+            templateUrl: templateBase + 'myApplications/fitbitData1.html',
+            controller: returnCtrlAs('fitbitData1'),
             access:loginRequired
         })
         .state('applications.myApplicationDetails', {

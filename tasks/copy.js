@@ -54,6 +54,10 @@ module.exports = function(grunt,config){
          src: 'html/**/*',
          dest: '<%= config.buildDir %>/'
         },
+        {
+         src: 'webfonts/**/*',
+         dest: '<%= config.buildDir %>/'
+        },
         appCustom,
         nonConcatFolder
       ]

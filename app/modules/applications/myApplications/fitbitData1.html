@@ -1,0 +1,59 @@
+<!-- 
+    fitbitData1.html
+ -->
+
+<!-- FitBit Data -->
+<div class="cui-action">
+  <!-- <h3 class="cui-action__title ">{{'cui-all-applications' | translate}}</h3> -->
+  <h3 class="cui-action__title ">FitBit Data</h3>
+  <p><a ui-sref="applications.trialOverview"><i class="fa fa-arrow-left">&nbsp;</i> Back to Trial Name</a></p>
+</div>
+
+<!-- itBit Data body -->
+<div class="cui-applications__main-container">
+  <div ng-include="'app/common-templates/partials/loader-updating.html'" ng-if="base.loader.for['myApplications.apps']"></div>
+  <div class="cui-loading__container" ng-if="base.loader.for['myApplications.apps']">
+  <div class="cui-loading--center"><div class="cui-loading"></div></div>
+  </div>
+  <!-- <div ng-if="!base.loader.for['myApplications.apps']" style="position:relative"> -->
+
+  <!-- Loader -->
+  <div class="cui-loading__container" ng-if="base.loader.for['fitbitData1.reloadingApps']">
+    <div class="cui-loading--center"><div class="cui-loading"></div></div>
+  </div>
+<div class="cui-media__title">{{fitbitData1.heartRate[0].datapoints[0].value}}</div>
+  <!-- No applications message -->
+  <p ng-if="myApplications.heartRate.length===0">{{'cui-no-applications' | translate}}</p>
+  <p class="cui-users__password-success" style="color:red; margin:20px; text-align:center" ng-if="base.apiError.for['fitbitData1.apps']">{{'error-generic'|translate}}</p>
+  <div class="cui-applications__manage-apps" >
+    <div class="cui-tile" ng-repeat="application in fitbitData1.heartRate"ng-class="{'last-item':($index+1)%5==0}">
+      <div style="height:100%">
+        <div class="cui-tile__title">
+        </div>
+        <div class="cui-tile__body">
+          <div class="cui-media__manage">
+            <!-- <div class="cui-media__image-container">
+              <a ng-href="{{application.mangledUrl}}" target="_blank"><div class="cui-media__image" cui-avatar-color-class-prefix="cui-avatar__color" cui-avatar-color-count="5" cui-avatar-names="application.name" cui-avatar-cuii18n-filter cui-avatar="application.iconUrl"></div></a>
+            </div> -->
+            <div class="cui-media__title">{{application.datapoints[0].value}}</div>
+            <div class="cui-media__title">{{application.datapoints[1].value}}</div>
+          </div>
+          <!-- <div class="cui-media__title">{{'description'|translate}}</div>
+          <div>{{application.description|cuiI18n}}</div>   --> 
+          <!-- <div class="cui-tile__footer"> -->
+            <!-- <a class="cui-button cui-button--inverted" ng-class="{'cui-button--error':!application.mangledUrl}" ng-href="{{application.mangledUrl}}" target="_blank" ng-if="application.mangledUrl">{{'launch'|translate}}</a>
+            <a class="cui-button cui-button--inverted" ng-class="{'cui-button--error':!application.urls[0].value}" ng-href="{{application.urls[0].value}}" target="_blank" ng-if="!application.mangledUrl">{{'launch'|translate}}</a> -->
+            <!-- <span class="cui-tile__footer-text">{{application.category|cuiI18n}}</span> -->
+          <!-- </div>       -->
+        </div>     
+      </div>
+    </div>
+  </div>
+
+  <!-- Paginate container -->
+  <!-- <div class="cui-paginate__container" ng-if="!base.loader.for['myApplications.apps']">
+    <span class="cui-paginate__results-label">{{'cui-num-results-page' | translate}}</span>
+    <results-per-page class="cui-paginate__select" ng-model="myApplications.search.pageSize"></results-per-page>
+    <paginate class="cui-paginate" results-per-page="myApplications.search.pageSize" count="myApplications.count" on-page-change="myApplications.pageChange" ng-model="myApplications.search.page" attach-rerender-to=" myApplications.reRenderPaginate"></paginate>
+  </div> -->
+</div>
