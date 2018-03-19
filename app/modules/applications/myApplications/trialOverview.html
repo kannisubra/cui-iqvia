@@ -2,28 +2,30 @@
   trialOverview.html
  -->
 <div class="cui-action">
-    <!-- <h3 class="cui-action__title ">{{'cui-all-applications' | translate}}</h3> -->
-    <h3 class="cui-action__title ">Trial Name</h3>
+    <a ui-sref="applications.allTrials"><i class="fa fa-arrow-left">&nbsp;</i> BACK TO TRIALS</a>
+    <h3 class="cui-action__title">CT_CAR001</h3>
+    <h4>25 patients</h4>
 </div>
 <!-- trial overview body -->
-<p><a ui-sref="applications.allTrials"><i class="fa fa-arrow-left">&nbsp;</i> Back to All Trials</a></p>
 
-<div id="accordion">
+<div id="accordion" class="trial-overview">
   <div class="card">
     <div class="card-header" id="headingOne">
       <h5 class="mb-0">
         <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-          <i class="fa fa-minus-circle">&nbsp;</i>Jesse Payne
+          Jesse Payne
         </button>
       </h5>
     </div>
 
-    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion" style="">
+    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
       <div class="card-body">
-        <h2>FitBit Flex 2</h2>
-        <h4>Subject is wearing:</h4>
+        <div class="device-details">
+          <h4>Subject is wearing:</h4>
+          <h2>FitBit Flex 2</h2>
+        </div>
         <a ui-sref="applications.fitbitData1">
-          <button class="btn btn-primary">VIEW STATISTICS</button>
+          <button class="btn btn-primary">View Statistics</button>
         </a>
       </div>
     </div>
@@ -32,16 +34,18 @@
     <div class="card-header" id="headingTwo">
       <h5 class="mb-0">
         <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-          <i class="fa fa-minus-circle">&nbsp;</i>Thomas Knoll
+          Thomas Knoll
         </button>
       </h5>
     </div>
     <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion" style="">
       <div class="card-body">
-        <h2>FitBit Flex 2</h2>
-        <h4>Subject is wearing:</h4>
+        <div class="device-details">
+          <h4>Subject is wearing:</h4>
+          <h2>FitBit Flex 2</h2>
+        </div>
         <a ui-sref="applications.fitbitData1">
-          <button class="btn btn-primary">VIEW STATISTICS</button>
+          <button class="btn btn-primary">View Statistics</button>
         </a>
       </div>
     </div>
@@ -50,52 +54,58 @@
     <div class="card-header" id="headingThree">
       <h5 class="mb-0">
         <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-          <i class="fa fa-minus-circle">&nbsp;</i>Isabelle Oliver
+          Isabelle Oliver
         </button>
       </h5>
     </div>
-    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion" style="">
+    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
       <div class="card-body">
-        <h2>FitBit Flex 2</h2>
-        <h4>Subject is wearing:</h4>
-        <a ui-sref="applications.fitbitData1">
-          <button class="btn btn-primary">VIEW STATISTICS</button>
-        </a>
-      </div>
+          <div class="device-details">
+            <h4>Subject is wearing:</h4>
+            <h2>FitBit Flex 2</h2>
+          </div>
+          <a ui-sref="applications.fitbitData1">
+            <button class="btn btn-primary">View Statistics</button>
+          </a>
+        </div>
     </div>
   </div>
   <div class="card">
     <div class="card-header" id="headingFour">
       <h5 class="mb-0">
         <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-          <i class="fa fa-minus-circle">&nbsp;</i>Ray Crawford
+          Ray Crawford
         </button>
       </h5>
     </div>
-    <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion" style="">
+    <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
       <div class="card-body">
-        <h2>FitBit Flex 2</h2>
-        <h4>Subject is wearing:</h4>
-        <a ui-sref="applications.fitbitData1">
-          <button class="btn btn-primary">VIEW STATISTICS</button>
-        </a>
-      </div>
+          <div class="device-details">
+            <h4>Subject is wearing:</h4>
+            <h2>FitBit Flex 2</h2>
+          </div>
+          <a ui-sref="applications.fitbitData1">
+            <button class="btn btn-primary">View Statistics</button>
+          </a>
+        </div>
     </div>
   </div>
   <div class="card">
     <div class="card-header" id="headingFive">
       <h5 class="mb-0">
         <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-          <i class="fa fa-minus-circle">&nbsp;</i>Amy Olson
+          Amy Olson
         </button>
       </h5>
     </div>
-    <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordion" style="">
+    <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordion">
       <div class="card-body">
-        <h2>FitBit Flex 2</h2>
-        <h4>Subject is wearing:</h4>
+        <div class="device-details">
+          <h4>Subject is wearing:</h4>
+          <h2>FitBit Flex 2</h2>
+        </div>
         <a ui-sref="applications.fitbitData1">
-          <button class="btn btn-primary">VIEW STATISTICS</button>
+          <button class="btn btn-primary">View Statistics</button>
         </a>
       </div>
     </div>
@@ -104,22 +114,23 @@
     <div class="card-header" id="headingSix">
       <h5 class="mb-0">
         <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
-          <i class="fa fa-minus-circle">&nbsp;</i>Logan Carlson
+          Logan Carlson
         </button>
       </h5>
     </div>
-    <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordion" style="">
+    <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordion">
       <div class="card-body">
-        <h2>FitBit Flex 2</h2>
-        <h4>Subject is wearing:</h4>
+        <div class="device-details">
+          <h4>Subject is wearing:</h4>
+          <h2>FitBit Flex 2</h2>
+        </div>
         <a ui-sref="applications.fitbitData1">
-          <button class="btn btn-primary">VIEW STATISTICS</button>
+          <button class="btn btn-primary">View Statistics</button>
         </a>
       </div>
     </div>
   </div>
 </div>
-
 <!-- 
   trialOverview.html END
  -->

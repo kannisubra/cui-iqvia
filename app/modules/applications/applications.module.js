@@ -10,7 +10,7 @@ angular.module('applications',[])
     $stateProvider
         .state('applications', {
             url: '/applications',
-            template: '<div ui-view class="cui-applications test-carlito"></div>',
+            template: '<div ui-view class="cui-applications iqvia-container"></div>',
             access: loginRequired,
             abstract: true
         })
@@ -20,10 +20,10 @@ angular.module('applications',[])
             controller: returnCtrlAs('allTrials'),
             access:loginRequired
         })
-        .state('applications.myApplications', {
+        .state('applications.trialOverview', {
             url: '?page&pageSize&service.category',
-            templateUrl: templateBase + 'myApplications/myApplications.html',
-            controller: returnCtrlAs('myApplications'),
+            templateUrl: templateBase + 'myApplications/trialOverview.html',
+            controller: returnCtrlAs('trialOverview'),
             access:loginRequired
         })
         .state('applications.fitbitData1', {
@@ -32,9 +32,15 @@ angular.module('applications',[])
             controller: returnCtrlAs('fitbitData1'),
             access:loginRequired
         })
+        .state('applications.myApplications', {
+            url: '?page&pageSize&service.category',
+            templateUrl: templateBase + 'myApplications/myApplications.html',
+            controller: returnCtrlAs('myApplications'),
+            access:loginRequired
+        })
         .state('applications.myApplicationDetails', {
             url: '/details/:appId',
-            templateUrl: templateBase + 'myApplications/myApplications-details.html',
+            templateUrl: templateBase + 'myApplications/fitbitData1.html',
             controller: returnCtrlAs('myApplicationDetails'),
             access:loginRequired
         })
