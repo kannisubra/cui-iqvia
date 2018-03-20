@@ -38,6 +38,18 @@ angular.module('applications',[])
             controller: returnCtrlAs('fitbitData1'),
             access:loginRequired
         })
+        .state('applications.fitbitData2', {
+            url: '?page&pageSize&service.category',
+            templateUrl: templateBase + 'myApplications/fitbitData2.html',
+            controller: returnCtrlAs('fitbitData2'),
+            access:loginRequired
+        })
+        .state('applications.fitbitData3', {
+            url: '?page&pageSize&service.category',
+            templateUrl: templateBase + 'myApplications/fitbitData3.html',
+            controller: returnCtrlAs('fitbitData3'),
+            access:loginRequired
+        })
         .state('applications.patientData', {
             url: '?page&pageSize&service.category',
             templateUrl: templateBase + 'myApplications/patientData.html',
