@@ -20,6 +20,12 @@ angular.module('applications',[])
             controller: returnCtrlAs('allTrials'),
             access:loginRequired
         })
+        .state('applications.blindFitbit', {
+            url: '?page&pageSize&service.category',
+            templateUrl: templateBase + 'myApplications/blindFitbit.html',
+            controller: returnCtrlAs('blindFitbit'),
+            access:loginRequired
+        })
         .state('applications.trialOverview', {
             url: '?page&pageSize&service.category',
             templateUrl: templateBase + 'myApplications/trialOverview.html',
@@ -30,6 +36,12 @@ angular.module('applications',[])
             url: '?page&pageSize&service.category',
             templateUrl: templateBase + 'myApplications/fitbitData1.html',
             controller: returnCtrlAs('fitbitData1'),
+            access:loginRequired
+        })
+        .state('applications.patientData', {
+            url: '?page&pageSize&service.category',
+            templateUrl: templateBase + 'myApplications/patientData.html',
+            controller: returnCtrlAs('patientData'),
             access:loginRequired
         })
         .state('applications.myApplications', {

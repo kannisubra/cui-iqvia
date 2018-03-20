@@ -14,7 +14,24 @@
 
 </head>
 <body ng-controller="baseCtrl as base" data-snap-ignore="true">
-
+  <div class="modal fade notification-modal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" style="display: none;" aria-hidden="true">
+      <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+          <!-- <div class="modal-header">
+            <h4 class="modal-title" id="mySmallModalLabel">Small modal</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div> -->
+          <div class="modal-body">
+            <h1>CLINICAL TRIAL NOTIFICATION</h1>
+            <div>Urgent!</div>
+            <p>We have observed variance for last 10 days. Advise to get in touch with your physician immediately</p>
+            <button class="btn btn-default">Launch Virtual Trial Assistant</button>
+          </div>
+        </div>
+      </div>
+    </div>
   <!-- Application Loading -->
   <div ng-cloak ng-if="base.loader.for.wholeApp" ng-inlude="'app/common-templates/index/whole-app-loader.html'"></div>
 
