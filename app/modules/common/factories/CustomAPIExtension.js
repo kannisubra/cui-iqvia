@@ -11,7 +11,10 @@ angular.module('common')
             accepts: 'application/vnd.com.covisint.platform.messaging.eventAudit.v1+json',
             call: '/eventaudit/v1/eventAudits',
             type: 'GET' },
-        
+        {cmd: 'getUsersActivityHistory',
+            accepts: 'application/vnd.com.covisint.platform.messaging.eventAudit.v1+json',
+            call: '/eventaudit/v1/eventAudits',
+            type: 'GET' },        
     	{
     		cmd: 'initiateNonce',
     		cmdType: 'unsecured',
