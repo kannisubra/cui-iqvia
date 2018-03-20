@@ -88,57 +88,21 @@
     <div class="cui-loading--center"><div class="cui-loading"></div></div>
   </div>
   <div class="cui-media__title">
-  <h3 class="cui-action__title ">{{'Kanni::Out of Range Values::' | translate}}</h3>
-  <h3 class="cui-action__title ">{{'Minimum::' | translate}}{{myApplications.outofrange[0].datapoints[0].value}}</h3>
-  <h3 class="cui-action__title ">{{'Maximum::' | translate}}{{myApplications.outofrange[0].datapoints[1].value}}</h3>
-  <h3 class="cui-action__title ">{{'Minutes::' | translate}}{{myApplications.outofrange[0].datapoints[2].value}}</h3>
-  <h3 class="cui-action__title ">{{'CaloriesOut::' | translate}}{{myApplications.outofrange[0].datapoints[3].value}}</h3>
+  <h3 class="cui-action__title ">{{'Kanni::group template info::' | translate}}</h3>
+  <h3 class="cui-action__title ">{{'trial name::' | translate}}{{ecosystems.groupTemplateDetails[0].name[0].text}}</h3>
+  <br>
+  <h3 class="cui-action__title ">{{'trial name::' | translate}}{{ecosystems.groupTemplateDetails2[0].name[0].text}}</h3>
+  <h3 class="cui-action__title ">{{'trial name::' | translate}}{{ecosystems.groupTemplateDetails2[0].attributes[0].attributeType.name}}</h3>
+  <h3 class="cui-action__title ">{{'trial name::' | translate}}{{ecosystems.groupTemplateDetails2[0].attributes[0].value}}</h3>
+  <h3 class="cui-action__title ">{{'trial name::' | translate}}{{ecosystems.groupTemplateDetails2[0].attributes[1].attributeType.name}}</h3>
+  <h3 class="cui-action__title ">{{'trial name::' | translate}}{{ecosystems.groupTemplateDetails2[0].attributes[1].value}}</h3>
+  <h3 class="cui-action__title ">{{'trial name::' | translate}}{{ecosystems.groupTemplateDetails2[0].attributes[2].attributeType.name}}</h3>
+  <h3 class="cui-action__title ">{{'trial name::' | translate}}{{ecosystems.groupTemplateDetails2[0].attributes[2].value}}</h3>
+  
   </div>
   <br><br><br>
-  <div class="cui-media__title">
-  <h3 class="cui-action__title ">{{'Kanni::Fatburn Values::' | translate}}</h3>
-  <h3 class="cui-action__title ">{{'Minimum::' | translate}}{{myApplications.fatburnKanni[0].datapoints[0].value}}</h3>
-  <h3 class="cui-action__title ">{{'Maximum::' | translate}}{{myApplications.fatburnKanni[0].datapoints[1].value}}</h3>
-  <h3 class="cui-action__title ">{{'Minutes::' | translate}}{{myApplications.fatburnKanni[0].datapoints[2].value}}</h3>
-  <h3 class="cui-action__title ">{{'CaloriesOut::' | translate}}{{myApplications.fatburnKanni[0].datapoints[3].value}}</h3>
-  </div>
-  <br><br><br>
-  <div class="cui-media__title">
-  <h3 class="cui-action__title ">{{'Kanni::Cardio Values::' | translate}}</h3>
-  <h3 class="cui-action__title ">{{'Minimum::' | translate}}{{myApplications.cardioKanni[0].datapoints[0].value}}</h3>
-  <h3 class="cui-action__title ">{{'Maximum::' | translate}}{{myApplications.cardioKanni[0].datapoints[1].value}}</h3>
-  <h3 class="cui-action__title ">{{'Minutes::' | translate}}{{myApplications.cardioKanni[0].datapoints[2].value}}</h3>
-  <h3 class="cui-action__title ">{{'CaloriesOut::' | translate}}{{myApplications.cardioKanni[0].datapoints[3].value}}</h3>
-  </div>
-  <br><br><br>
-  <div class="cui-media__title">
-  <h3 class="cui-action__title ">{{'Kanni::Peak Values::' | translate}}</h3>
-  <h3 class="cui-action__title ">{{'Minimum::' | translate}}{{myApplications.peakKanni[0].datapoints[0].value}}</h3>
-  <h3 class="cui-action__title ">{{'Maximum::' | translate}}{{myApplications.peakKanni[0].datapoints[1].value}}</h3>
-  <h3 class="cui-action__title ">{{'Minutes::' | translate}}{{myApplications.peakKanni[0].datapoints[2].value}}</h3>
-  <h3 class="cui-action__title ">{{'CaloriesOut::' | translate}}{{myApplications.peakKanni[0].datapoints[3].value}}</h3>
-  </div>              
-              <br><br><br>              
-  <div class="cui-media__title">
-  <h3 class="cui-action__title ">{{'Kanni::Activity Values::' | translate}}</h3>
-  <h3 class="cui-action__title ">{{'restingHeartRate value is::' | translate}}{{myApplications.activity[0].datapoints[0].value}}</h3>
-  <h3 class="cui-action__title ">{{'lightlyActiveMinutes value is' | translate}}{{myApplications.activity[0].datapoints[1].value}}</h3>
-  <h3 class="cui-action__title ">{{'marginalCalories value is' | translate}}{{myApplications.activity[0].datapoints[2].value}}</h3>
-  <h3 class="cui-action__title ">{{'steps value is' | translate}}{{myApplications.activity[0].datapoints[3].value}}</h3>
-  <h3 class="cui-action__title ">{{'veryActiveMinutes value is' | translate}}{{myApplications.activity[0].datapoints[4].value}}</h3>
-  <h3 class="cui-action__title ">{{'sedentaryMinutes value is' | translate}}{{myApplications.activity[0].datapoints[5].value}}</h3>
-  </div>
-  <br><br><br>
-  <div class="cui-media__title">
-  <h3 class="cui-action__title ">{{'Sony::Activity Values::' | translate}}</h3>
-  <h3 class="cui-action__title ">{{'restingHeartRate value is::' | translate}}{{myApplications.activitySony[0].datapoints[0].value}}</h3>
-  <h3 class="cui-action__title ">{{'lightlyActiveMinutes value is' | translate}}{{myApplications.activitySony[0].datapoints[1].value}}</h3>
-  <h3 class="cui-action__title ">{{'marginalCalories value is' | translate}}{{myApplications.activitySony[0].datapoints[2].value}}</h3>
-  <h3 class="cui-action__title ">{{'steps value is' | translate}}{{myApplications.activitySony[0].datapoints[3].value}}</h3>
-  <h3 class="cui-action__title ">{{'veryActiveMinutes value is' | translate}}{{myApplications.activitySony[0].datapoints[4].value}}</h3>
-  <h3 class="cui-action__title ">{{'sedentaryMinutes value is' | translate}}{{myApplications.activitySony[0].datapoints[5].value}}</h3>
-  </div>
-  <br><br><br>            
+
+        
 <div class="cui-media__title"></div>
   <!-- No applications message -->
   <p ng-if="myApplications.heartRate.length===0">{{'cui-no-applications' | translate}}</p>

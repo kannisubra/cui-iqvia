@@ -7,6 +7,14 @@ angular.module('common')
 
     const calls = [
     	/* ---------- Registration Nonce Calls ---------- */
+        {cmd: 'getGroupTemplates',
+            accepts: 'application/vnd.com.covisint.platform.group.template.v1+json;includeAttributeTypes=true',
+            call: '/group/v3/groupTemplates',
+            type: 'GET' },
+        {cmd: 'getGroupTemplates2',
+            accepts: 'application/vnd.com.covisint.platform.group.v1+json;includeEntitlements=true;includeAttributeTypes=true',
+            call: '/group/v3/groups',
+            type: 'GET' },
         {cmd: 'getUsersHeartRateHistory',
             accepts: 'application/vnd.com.covisint.platform.messaging.eventAudit.v1+json',
             call: '/eventaudit/v1/eventAudits',

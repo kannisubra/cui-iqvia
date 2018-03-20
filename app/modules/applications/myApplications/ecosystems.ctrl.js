@@ -1,93 +1,30 @@
 angular.module('applications')
 .controller('ecosystemsCtrl', function(API,APIError,APIHelpers,DataStorage,Loader,User,$filter,$pagination,$q,$scope,$state,$stateParams,$http) {
-	const myApplications = this
+	const ecosystems = this
     const userId = User.user.id
-    const loaderName = 'myApplications.'
+    const loaderName = 'ecosystems.'
     let checkedLocalStorage = false
-   //pulse kanni
-   API.cui.getUsersHeartRateHistory({'qs':[['sortBy','-creation'],['eventTemplateId','ef6928b8-cd4e-43c8-8862-71f5dbae1137']]})
+   API.cui.getGroupTemplates({'qs':[['id','1493d12f-d8cc-4b73-845b-7088a5b833bb']]})
             .then(res=>{
-                    myApplications.heartRate = res;
-            console.log("kanni"+myApplications.heartRate[0].datapoints[0].value);
+                    ecosystems.groupTemplateDetails = res;
+            console.log("kanni"+ecosystems.groupTemplateDetails[0].name[0].text);
+            
         }).fail(err=>{
                 console.log(err);
                
         }) 
-   //out of range kanni     
-   API.cui.getUsersHeartRateHistory({'qs':[['sortBy','-creation'],['eventTemplateId','59c167ac-529d-4e49-bd90-5771e30fa332'],['deviceId','ce76444c-9582-4dc3-8512-ff1a56ab62f7'],['pageSize','1']]})
+       API.cui.getGroupTemplates2({'qs':[['parentGroupTemplateId','1493d12f-d8cc-4b73-845b-7088a5b833bb']]})
             .then(res=>{
-                    myApplications.outofrange = res;
-            console.log("min value is"+myApplications.outofrange[0].datapoints[0].value);
-            console.log("max value is"+myApplications.outofrange[0].datapoints[1].value);
-            console.log("minutes value is"+myApplications.outofrange[0].datapoints[2].value);
-            console.log("caloriesout value is"+myApplications.outofrange[0].datapoints[3].value);
+                    ecosystems.groupTemplateDetails2 = res;
+            console.log("kanni"+ecosystems.groupTemplateDetails2[0].name[0].text);
+            console.log("kanni"+ecosystems.groupTemplateDetails2[0].attributes[0].attributeType.name);
+            console.log("kanni"+ecosystems.groupTemplateDetails2[0].attributes[0].value);
+            console.log("kanni"+ecosystems.groupTemplateDetails2[0].attributes[1].attributeType.name);
+            console.log("kanni"+ecosystems.groupTemplateDetails2[0].attributes[1].value);
+            console.log("kanni"+ecosystems.groupTemplateDetails2[0].attributes[2].attributeType.name);
+            console.log("kanni"+ecosystems.groupTemplateDetails2[0].attributes[2].value);            
         }).fail(err=>{
                 console.log(err);
                
         }) 
-   //fatburn kanni     
-   API.cui.getUsersHeartRateHistory({'qs':[['sortBy','-creation'],['eventTemplateId','49556f1f-bc41-4a91-b048-7832f62dcb5c'],['deviceId','ce76444c-9582-4dc3-8512-ff1a56ab62f7'],['pageSize','1']]})
-            .then(res=>{
-                    myApplications.fatburnKanni = res;
-            console.log("min value is"+myApplications.fatburnKanni[0].datapoints[0].value);
-            console.log("max value is"+myApplications.fatburnKanni[0].datapoints[1].value);
-            console.log("minutes value is"+myApplications.fatburnKanni[0].datapoints[2].value);
-            console.log("caloriesout value is"+myApplications.fatburnKanni[0].datapoints[3].value);
-        }).fail(err=>{
-                console.log(err);
-               
-        })
-   //cardio kanni     
-   API.cui.getUsersHeartRateHistory({'qs':[['sortBy','-creation'],['eventTemplateId','3cf284cf-9699-4945-a5a8-f7fe6a939bc2'],['deviceId','ce76444c-9582-4dc3-8512-ff1a56ab62f7'],['pageSize','1']]})
-            .then(res=>{
-                    myApplications.cardioKanni = res;
-            console.log("min value is"+myApplications.cardioKanni[0].datapoints[0].value);
-            console.log("max value is"+myApplications.cardioKanni[0].datapoints[1].value);
-            console.log("minutes value is"+myApplications.cardioKanni[0].datapoints[2].value);
-            console.log("caloriesout value is"+myApplications.cardioKanni[0].datapoints[3].value);
-        }).fail(err=>{
-                console.log(err);
-               
-        })
-   //peak kanni     
-   API.cui.getUsersHeartRateHistory({'qs':[['sortBy','-creation'],['eventTemplateId','3b41bfb4-42ea-4858-9e53-c3bcca60a337'],['deviceId','ce76444c-9582-4dc3-8512-ff1a56ab62f7'],['pageSize','1']]})
-            .then(res=>{
-                    myApplications.peakKanni = res;
-            console.log("min value is"+myApplications.peakKanni[0].datapoints[0].value);
-            console.log("max value is"+myApplications.peakKanni[0].datapoints[1].value);
-            console.log("minutes value is"+myApplications.peakKanni[0].datapoints[2].value);
-            console.log("caloriesout value is"+myApplications.peakKanni[0].datapoints[3].value);
-        }).fail(err=>{
-                console.log(err);
-               
-        })        
-    //Steps and Activity   
-   API.cui.getUsersActivityHistory({'qs':[['sortBy','-creation'],['eventTemplateId','37eaf6a0-14c7-47fd-a8d8-753dccd2f6f5'],['deviceId','ce76444c-9582-4dc3-8512-ff1a56ab62f7'],['pageSize','1']]})
-            .then(res=>{
-                    myApplications.activity = res;
-            console.log("restingHeartRate value is"+myApplications.activity[0].datapoints[0].value);
-            console.log("lightlyActiveMinutes value is"+myApplications.activity[0].datapoints[1].value);
-            console.log("marginalCalories value is"+myApplications.activity[0].datapoints[2].value);
-            console.log("steps value is"+myApplications.activity[0].datapoints[3].value);
-            console.log("veryActiveMinutes value is"+myApplications.activity[0].datapoints[4].value);
-            console.log("sedentaryMinutes value is"+myApplications.activity[0].datapoints[5].value);
-        }).fail(err=>{
-                console.log(err);
-               
-        })     
-       //Steps and Activity for Sony  
-   API.cui.getUsersActivityHistory({'qs':[['sortBy','-creation'],['eventTemplateId','37eaf6a0-14c7-47fd-a8d8-753dccd2f6f5'],['deviceId','442687ae-06e7-458e-90ea-c3e88782c581'],['pageSize','1']]})
-            .then(res=>{
-                    myApplications.activitySony = res;
-            console.log("restingHeartRate value is"+myApplications.activitySony[0].datapoints[0].value);
-            console.log("lightlyActiveMinutes value is"+myApplications.activitySony[0].datapoints[1].value);
-            console.log("marginalCalories value is"+myApplications.activitySony[0].datapoints[2].value);
-            console.log("steps value is"+myApplications.activitySony[0].datapoints[3].value);
-            console.log("veryActiveMinutes value is"+myApplications.activitySony[0].datapoints[4].value);
-            console.log("sedentaryMinutes value is"+myApplications.activitySony[0].datapoints[5].value);
-        }).fail(err=>{
-                console.log(err);
-               
-        })         
-    
 })
