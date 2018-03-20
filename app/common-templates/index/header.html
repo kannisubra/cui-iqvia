@@ -1,3 +1,201 @@
+<!-- 
+  header.html
+ -->
+<!-- global style sheet override -->
+<style>
+  .code-info { display: none;}
+  .cui-action { 
+    display: block;
+    margin-left: 6px;
+  }
+  .cui-action a {
+    font-size: 12px;
+    color: #3DB3E1;
+  }
+  .cui-action h4 {
+    color: #9B9B9B;
+    margin-bottom: 10px;
+  }
+  .cui-card__button {
+    float: none;
+    width: 295px;
+    height: 50px;
+    padding: 0;
+    border-radius: 0;
+    background: #0E537E;
+    color: #fff;
+  }
+  .cui-card__button--light {
+    background: #E6F6FC;
+    color: #2C3A42;
+  }
+  .cui-header {
+    background: #fff;
+    /* padding: 0; */
+  }
+  /* .cui-header:after {
+    content:"";
+    position:absolute;
+    width:100%;
+    bottom:1px;
+    z-index:-1;
+    transform:scale(.9);
+    box-shadow: 0px 0px 8px 2px #000000;
+  } */
+  /* .cui-header__top {
+    background: #fff;
+    height: 222px;
+  } */
+  .cui-header__top img {
+    width: 236px;
+    margin: 0 auto;
+  }
+  .cui-footer {
+    background: #2C3A42;
+    color: #fff;
+  }
+  .cui-footer select,
+  .cui-footer__link {
+    color: #fff;
+    font-size: 14px;
+  }
+  .cui-footer .language-select {
+    padding: 0 0 0 5px;
+  }
+  .cui-profile__user-name,
+  .cui-profile .cui-profile__chevron {
+    color: #666;
+  }
+  #Notification-Icon{
+    fill: #666;
+    stroke: #666;
+  }
+  .menu-toggle--button, 
+  .cui-menu__toggle-button,
+  .menu-toggle--button::before, 
+  .cui-menu__toggle-button::before,
+  .menu-toggle--button::after, 
+  .cui-menu__toggle-button::after{
+    background: #666;
+  }
+  .snap-drawer, snap-drawer {
+    background: #2C3A42;
+  }
+  .cui-avatar__color1,
+  .cui-avatar__color2 {
+    background-color: #0E537E;
+  }
+  .v2 .cui-profile--mobile {
+    background: #E6F6FC;
+  }
+  .cui-avatar__user-menu,
+  .cui-profile__user-menu,
+  .cui-header__user-menu {
+    background: transparent;
+  }
+  .v2 .cui-desktop-menu {
+    background: #fff;
+  }
+  .iqvia-container .cui-action__title {
+    color: #065280;
+    font-size: 28px;
+  }
+  .iqvia-container #accordion {
+    width: 90%;
+    margin: 0 auto;
+  }
+  .iqvia-container #accordion .card {
+    background-color: #E6F6FC;
+    border: none;
+    border-radius: 0;
+    margin-bottom: 10px;
+  }
+  .iqvia-container #accordion .card .card-header {
+    border-bottom: 0;
+    background-color: #E6F6FC;
+  }
+  .iqvia-container .trial-overview .card .card-header h5 {
+    background: url(/img/icon/avatar.png) 9px -4px no-repeat;
+    background-size: 66px;
+    height: 57px;
+  }
+  .iqvia-container .trial-overview .card .card-header h5 button {
+    padding-left: 80px!important;
+  }
+  .iqvia-container #accordion .card .card-header h5 button .fa{
+    color: #3DB3E1;
+  }
+  .iqvia-container #accordion .card .card-header h5 button {
+    color: #2C3A42;
+    padding-left: 32px;
+    position: relative;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  .iqvia-container #accordion .card .card-header h5 button:before {
+    position: absolute;
+    font-family: 'FontAwesome';
+    top: 0;
+    left: 0;
+    content: "\f056";
+    color: #3DB3E1;
+    font-size: 25px;
+  }
+  .iqvia-container #accordion .card .card-header h5 .collapsed:before{
+    content: "\f055";
+  }
+  .iqvia-container #accordion .card .card-body {
+    padding-top: 0;
+    border-bottom: 5px solid #3DB3E1;
+  }
+  .iqvia-container #accordion .card .card-body a button {
+    background: #fff;
+    border-radius: 0;
+    width: 100%;
+    box-shadow: #D5E8F1 0px 5px 17px;
+    padding: 10px;
+    margin: 20px 0 5px 0;
+    color: #9B9B9B;
+    margin: 20px 0 5px 0;
+    letter-spacing: 4px;
+    font-weight: 100;
+  }
+  .iqvia-container #accordion .card .card-body a .btn-primary {
+    background: #0E537E;
+    border-color: transparent;
+    color: #fff;
+    font-size: 14px;
+    letter-spacing: 3px;
+    font-weight: 500;
+  }
+  .iqvia-container #accordion .card .card-body a button .nmbr-count {
+    font-size: 20px;
+    font-weight: bold;
+    color: #34B2E3;
+  }
+  .iqvia-container #accordion .card .card-body a button i {
+    margin-top: 7px;
+    color: #34B2E3;
+  }
+  .device-details {
+    border-top: 1px solid #A2C3D5;
+    padding-top: 24px;
+    background: url(/img/pic/fitbit.png) 8px 15px no-repeat;
+    padding-left: 70px;
+    height: 100px;
+  }
+  .iqvia-container #accordion .card .collapse h2,
+  .iqvia-container #accordion .card h2 {
+    font-size: 28px;
+    color: #065280;
+  }
+  .iqvia-container #accordion .card .collapse h4,
+  .iqvia-container #accordion .card h4 {
+    font-size: 14px;
+    color: #757476;
+  }
+</style>
 <div class="cui-header__top">
   <div class="menu-toggle menu-toggle--mobile" snap-toggle="left" ng-click="base.menu.mobile.toggle()" ng-if="base.menu.mobile.enabled" style="margin-right:20px">
     <div class="menu-toggle--button"></div>
@@ -6,11 +204,12 @@
   <!-- Header Logo -->
   <!-- <svg class="cui-header__svg-logo" viewBox="0 0 640 124"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href=""></use></svg> -->
 
+  <img src="/img/logo/iqvia_236x44.png" alt="IQVIA">
   <!-- Global Search -->
-    <div class="cui-header__search-container" ng-model="searchEnabled" ng-if="base.accessByAnyAdmin()">
+    <!-- <div class="cui-header__search-container" ng-model="searchEnabled" ng-if="base.accessByAnyAdmin()">
         <a ui-sref="search"><cui-icon cui-svg-icon="cui:search" svg-class="cui-header__search-icon" preserveAspectRatio="xMidYMid meet"></cui-icon>
         </a>
-    </div>
+    </div> -->
 
   <div class="cui-profile" class-toggle toggled-class="cui-profile--active" ng-click="toggleClass()" off-click="toggleOff()" ng-if="base.user.name.given">
     <!-- Logged In User Name -->
@@ -50,7 +249,7 @@
   <div ng-if="!base.user.name.given" class="cui-profile__mobile-login">
     <li class="cui-off-canvas__section" ng-class="cui-off-canvas__section--active">
       <a class="cui-off-canvas__section-link" ui-sref="applications.myApplications" disabled>
-         <span class="cui-styleguide__nav__name" >{{'cui-login' | translate }}</span>
+         <span class="cui-styleguide__nav__name actual-mobile-sign-up-unused" >{{'cui-login' | translate }}</span>
       </a>
     </li>
   </div>

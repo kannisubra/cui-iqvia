@@ -1,0 +1,47 @@
+<!-- 
+    fitbitData1.html
+ -->
+<div class="cui-action">
+  <a ui-sref="applications.trialOverview"><i class="fa fa-arrow-left">&nbsp;</i> BACK TO CT_CAR001</a>
+  <h3 class="cui-action__title ">Subject #1</h3>
+  <p></p>
+</div>
+
+<!-- FitBit Data body -->
+<div class="cui-applications__main-container">
+  <div ng-include="'app/common-templates/partials/loader-updating.html'" ng-if="base.loader.for['myApplications.apps']"></div>
+  <div class="cui-loading__container" ng-if="base.loader.for['myApplications.apps']">
+  <div class="cui-loading--center"><div class="cui-loading"></div></div>
+  </div>
+  <!-- <div ng-if="!base.loader.for['myApplications.apps']" style="position:relative"> -->
+
+  <!-- Loader -->
+  <div class="cui-loading__container" ng-if="base.loader.for['fitbitData1.reloadingApps']">
+    <div class="cui-loading--center"><div class="cui-loading"></div></div>
+  </div>
+<div class="cui-media__title">{{fitbitData1.heartRate[0].datapoints[0].value}}</div>
+  <!-- No applications message -->
+  <p ng-if="myApplications.heartRate.length===0">{{'cui-no-applications' | translate}}</p>
+  <p class="cui-users__password-success" style="color:red; margin:20px; text-align:center" ng-if="base.apiError.for['fitbitData1.apps']">{{'error-generic'|translate}}</p>
+  <div class="cui-applications__manage-apps" >
+    <div class="cui-tile" ng-repeat="application in fitbitData1.heartRate"ng-class="{'last-item':($index+1)%5==0}">
+      <div style="height:100%">
+        <div class="cui-tile__title">
+        </div>
+        <div class="cui-tile__body">
+          <div class="cui-media__manage">
+            <!-- <div class="cui-media__image-container">
+              <a ng-href="{{application.mangledUrl}}" target="_blank"><div class="cui-media__image" cui-avatar-color-class-prefix="cui-avatar__color" cui-avatar-color-count="5" cui-avatar-names="application.name" cui-avatar-cuii18n-filter cui-avatar="application.iconUrl"></div></a>
+            </div> -->
+            <div class="cui-media__title">{{application.datapoints[0].value}}</div>
+            <div class="cui-media__title">{{application.datapoints[1].value}}</div>
+          </div>
+        </div>     
+      </div>
+    </div>
+  </div>
+
+</div>
+<!-- 
+    fitbitData1.html END
+ -->

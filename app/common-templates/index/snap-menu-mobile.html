@@ -1,3 +1,6 @@
+<!-- 
+  snap-menu-mobile.html
+ -->
 <div class="cui-profile cui-profile--mobile" class-toggle toggled-class="cui-profile--active" ng-click="toggleClass()" off-click="toggleOff()" ng-if="base.user.name.given">
   <div class="cui-profile__row">
 
@@ -44,6 +47,30 @@
   </div>
 </span>
 
+<!-- Clinical Trials -->
+<span class="snap-menu--option" snap-close ui-sref="applications.allTrials" ng-if="base.user.id">
+  <span class="snap-menu__option-name">Clinical Trials</span>
+  <div>
+    <cui-icon cui-svg-icon="cui:applications_v2" svg-class="snap-menu__icon" viewbox="0 0 49 49" preserveAspectRatio="xMidYMid meet" ></cui-icon>
+  </div>
+</span>
+
+<!-- Trial Overview -->
+<span class="snap-menu--option" snap-close ui-sref="applications.trialOverview" ng-if="base.user.id">
+  <span class="snap-menu__option-name">Trial Overview</span>
+  <div>
+    <cui-icon cui-svg-icon="cui:applications_v2" svg-class="snap-menu__icon" viewbox="0 0 49 49" preserveAspectRatio="xMidYMid meet" ></cui-icon>
+  </div>
+</span>
+
+<!-- FitBit Data 1 -->
+<span class="snap-menu--option" snap-close ui-sref="applications.fitbitData1" ng-if="base.user.id">
+  <span class="snap-menu__option-name">FitBit Data 1</span>
+  <div>
+    <cui-icon cui-svg-icon="cui:applications_v2" svg-class="snap-menu__icon" viewbox="0 0 49 49" preserveAspectRatio="xMidYMid meet" ></cui-icon>
+  </div>
+</span>
+
 <!-- Applications -->
 <span class="snap-menu--option" snap-close ui-sref="applications.myApplications" ng-if="base.user.id">
   <span class="snap-menu__option-name">{{'my-applications' | translate}}</span>
@@ -53,20 +80,20 @@
 </span>
 
 <!-- Organization Profile -->
-<span class="snap-menu--option" snap-close ui-sref="organization.profile({orgId:base.user.organization.id})" ng-if="base.user.id">
+<!-- <span class="snap-menu--option" snap-close ui-sref="organization.profile({orgId:base.user.organization.id})" ng-if="base.user.id">
   <span class="snap-menu__option-name">{{'my-organization' | translate}}</span>
   <div>
     <cui-icon cui-svg-icon="cui:organization" svg-class="snap-menu__icon" viewbox="0 0 48 48" preserveAspectRatio="xMidYMid meet" ></cui-icon>
   </div>
-</span>
+</span> -->
 
 <!-- Pending Requests -->
-<span class="snap-menu--option" snap-close ui-sref="pendingAppRequests" ng-if="base.user.id">
+<!-- <span class="snap-menu--option" snap-close ui-sref="pendingAppRequests" ng-if="base.user.id">
   <span class="snap-menu__option-name">{{'cui-my-app-requests' | translate}}</span>
   <div>
     <cui-icon cui-svg-icon="cui:status-pending" svg-class="snap-menu__icon" viewbox="0 0 48 48" preserveAspectRatio="xMidYMid meet" ></cui-icon>
   </div>
-</span>
+</span> -->
 
 <!-- Invite -->
 <!-- <span class="snap-menu--option" snap-close ui-sref="invitation" ng-if="base.accessByAnyAdmin()">

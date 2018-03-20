@@ -6,12 +6,38 @@
     and moved this work to that branch as these types of registrations were not supported by the API and due to
     developers thinking these registrations were in a finished state in downstream projects.
  -->
-
+<style>
+    .welcome-wrapper {
+        background: #2C3A42 url(/img/pic/woman.png) -290px 5px no-repeat;
+        padding: 0;
+    }
+    .welcome-wrapper .welcome-title h1 {
+        color: #fff;
+        font-weight: 100;
+        font-family: "lato-light", sans-serif;
+    }
+    .welcome-wrapper .welcome-title h1 span {
+        font-weight: bold;
+        border-bottom: 5px solid #3DB3E1;
+        display: inline-block;
+        padding-bottom: 10px;
+        font-family: "lato-normal", sans-serif;
+    }
+    .cui-card {
+        background: transparent;
+        border-radius: 0;
+        min-height: 0;
+        margin: 0;
+        max-width: none;
+        padding: 0;
+    }
+</style>
 <div class="welcome-wrapper">
 
     <!-- Title -->
     <div class="welcome-title">
-        <h1>{{ 'welcome-title' | translate }}:</h1>
+        <!-- <h1>{{ 'welcome-title' | translate }}:</h1> -->
+        <h1><span>IQVIA</span> CLINICAL IOT</h1>
     </div>
 
     <div class="cui-card__container">
@@ -53,7 +79,7 @@
 
         <!-- Tile: New User -->
         <div class="cui-card">
-            <div class="cui-card__image-container">
+            <!-- <div class="cui-card__image-container">
                 <div>
                     <cui-icon cui-svg-icon="cui:user" svg-class="cui-action__icon" use-class="cui-card__icon" viewbox="0 0 48 48" preserveAspectRatio="xMidYMid meet" ></cui-icon>
                 </div>
@@ -61,8 +87,13 @@
             <div class="cui-card__content">
                 <p class="cui-card__content-header">{{ 'cui-new-user' | translate }}</p>
                 <p>{{ 'cui-new-user-description' | translate }}</p>
-            </div>
-            <button class="cui-card__button" ui-sref="registration.walkup">{{ 'cui-sign-up' | translate }}</button>
+            </div> -->
+            <!-- <a class="cui-card__button cui-off-canvas__section-link" ui-sref="applications.myApplications" disabled>
+                <span class="cui-styleguide__nav__name actual-sign-up" >{{'cui-login' | translate }}</span>
+            </a> -->
+            <button class="cui-card__button" ui-sref="applications.myApplications">Login</button>
+            <!-- <button class="cui-card__button" ui-sref="registration.walkup">{{ 'cui-sign-up' | translate }}</button> -->
+            <button class="cui-card__button cui-card__button--light" ui-sref="registration.walkup">Register</button>
         </div>
     </div>
 </div>
