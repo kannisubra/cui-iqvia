@@ -50,6 +50,12 @@ angular.module('applications',[])
             controller: returnCtrlAs('myApplications'),
             access:loginRequired
         })
+        .state('applications.ecosystems', {
+            url: '?page&pageSize&service.category',
+            templateUrl: templateBase + 'myApplications/ecosystems.html',
+            controller: returnCtrlAs('ecosystems'),
+            access:loginRequired
+        })
         .state('applications.myApplicationDetails', {
             url: '/details/:appId',
             templateUrl: templateBase + 'myApplications/fitbitData1.html',
