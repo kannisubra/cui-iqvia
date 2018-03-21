@@ -20,6 +20,18 @@ angular.module('applications',[])
             controller: returnCtrlAs('allTrials'),
             access:loginRequired
         })
+        .state('applications.trial1', {
+            url: '?page&pageSize&service.category',
+            templateUrl: templateBase + 'myApplications/trial1.html',
+            controller: returnCtrlAs('trial1'),
+            access:loginRequired
+        })
+        .state('applications.trial2', {
+            url: '?page&pageSize&service.category',
+            templateUrl: templateBase + 'myApplications/trial2.html',
+            controller: returnCtrlAs('trial2'),
+            access:loginRequired
+        })
         .state('applications.blindFitbit', {
             url: '?page&pageSize&service.category',
             templateUrl: templateBase + 'myApplications/blindFitbit.html',

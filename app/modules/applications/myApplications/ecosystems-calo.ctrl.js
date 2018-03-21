@@ -15,10 +15,15 @@ angular.module('applications')
 	
 	API.cui.getGroupTemplates2({'qs':[['parentGroupTemplateId','1493d12f-d8cc-4b73-845b-7088a5b833bb']]})
 	.then(res=>{
-
-		console.log('res.length='+res.length+'\nres[0].name[0].text: '+res[0].name[0].text);
-		
-		// $scope.$apply();
+		ecosystems.groupTemplateDetails2 = res;
+		console.log("kanni"+ecosystems.groupTemplateDetails2[0].name[0].text);
+		console.log("kanni"+ecosystems.groupTemplateDetails2[0].attributes[0].attributeType.name);
+		console.log("kanni"+ecosystems.groupTemplateDetails2[0].attributes[0].value);
+		console.log("kanni"+ecosystems.groupTemplateDetails2[0].attributes[1].attributeType.name);
+		console.log("kanni"+ecosystems.groupTemplateDetails2[0].attributes[1].value);
+		console.log("kanni"+ecosystems.groupTemplateDetails2[0].attributes[2].attributeType.name);
+		console.log("kanni"+ecosystems.groupTemplateDetails2[0].attributes[2].value);
+		$scope.$apply();
 	}).fail(err=>{
 		console.log(err);
 	}) 

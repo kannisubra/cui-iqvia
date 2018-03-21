@@ -6,6 +6,9 @@ angular.module('applications')
     let checkedLocalStorage = false
     console.log('fitbitData1: onload: KANNI');
 
+    $scope.lightlyActiveMins = "reading device...";
+    $scope.userSteps = "reading device...";
+    
     // KANNI FITBIT
     //Steps and Activity
     $scope.getStepsMinutes = function (){
