@@ -1,5 +1,5 @@
 <!-- 
-    fitbitData1.html
+    fitbitData3.html
  -->
  <style>
     .iqvia-container{
@@ -38,7 +38,7 @@
       color: #2B3A42;
     }
     .carousel-indicators {
-      top: 660px;
+      top: 570px;
     }
     .carousel-indicators li {
       width: 11px;
@@ -52,17 +52,9 @@
       background-color: #3DB3E1;
     }
     .carousel .carousel-inner .carousel-item {
-      height: 680px;
+      height: 610px;
     }
     .carousel .carousel-inner .carousel-item .chart {
-      width: 337px;
-      margin: 0 auto;
-      display: block;
-      border-top: 2px solid #C3DAE6;
-      padding-top: 20px;
-    }
-    .carousel .carousel-inner .carousel-item .chart-header {
-      clear: both;
       width: 337px;
       margin: 0 auto;
       display: block;
@@ -115,7 +107,7 @@
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <h3 class="cui-action__title ">Subject #1</h3>
+        <h3 class="cui-action__title ">Subject #3</h3>
         <div class="avatar float-left"><img src="/img/icon/avatar-lg.png" alt=""></div>
         <div class="avatar-data float-left" ng-show="lightlyActiveMins">
           <h4>Active Minutes</h4>
@@ -123,14 +115,7 @@
           <h4>Steps</h4>
           <h2>{{userSteps}}</h2>
         </div>
-        <div class="chart-header">
-          <div class="heart-rate float-left">
-            <i class="fa fa-heart">&nbsp;</i> HEART RATE
-          </div>
-          <div class="avg-bpm float-right">{{myHeartRate}} AVG BPM</div>
-        </div>
-        <div id="chart1"></div>
-        <!-- <img id="chart2" src="/img/pic/hr-day.png" alt=""> -->
+        <img class="chart" src="/img/pic/hr-day.png" alt="">
         <button type="button" class="btn btn-primary">Notify Subject</button>
       </div>
       <div class="carousel-item">
@@ -142,14 +127,7 @@
           <h4>Steps</h4>
           <h2>210,257-298,921</h2>
         </div>
-        <div class="chart-header">
-          <div class="heart-rate float-left">
-            <i class="fa fa-heart">&nbsp;</i> HEART RATE
-          </div>
-          <div class="avg-bpm float-right">{{myHeartRate}} AVG BPM</div>
-        </div>
-        <div id="chart2"></div>
-        <!-- <img id="chart2" src="/img/pic/hr-month.png" alt=""> -->
+        <img class="chart" src="/img/pic/hr-month.png" alt="">
         <button type="button" class="btn btn-primary">Sync to StudyHub</button>
         <p class="last-updated">Last sync to StudyHub 03/24/18</p>
     </div>
@@ -158,11 +136,12 @@
       <li data-target="#carouselExampleIndicators" data-slide-to="1" class=""></li>
     </ol>
 
+
 <script>
   $('.carousel').carousel({
     interval: false
   })
 </script>
 <!-- 
-    fitbitData1.html END
+    fitbitData3.html END
  -->

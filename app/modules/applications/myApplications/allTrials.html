@@ -2,12 +2,36 @@
   allTrials.html
  -->
 <div class="cui-action all-trials">
-    <!-- <h3 class="cui-action__title ">{{'cui-all-applications' | translate}}</h3> -->
-    <h3 class="cui-action__title">All Clinical Trials</h3>
+    <h3 class="cui-action__title">Clinical Trials Sites</h3>
 </div>
 <!-- all trials body -->
 <div id="accordion">
-  <div class="card">
+  <div class="card" ng-repeat="trial in trialJSON">
+    <div class="card-header" id="heading{{$index}}">
+      <h5 class="mb-0">
+        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse{{$index}}" aria-expanded="true" aria-controls="collapseOne">
+          {{trial.name[0].text}}
+        </button>
+      </h5>
+    </div>
+
+    <div id="collapse{{$index}}" class="collapse" aria-labelledby="heading{{$index}}" data-parent="#accordion" style="">
+      <div class="card-body">
+        <h2>{{trial.description[0].text}}</h2>
+        <h4>{{trial.attributes[0].value}}</h4>
+        <a ui-sref="applications.trial{{$index+1}}" href="#">
+          <button class="btn btn-default">
+            <span class="float-left">
+              <span class="nmbr-count">{{trial.attributes[2].value.replace('Subjects','')}}</span> subjects
+            </span>
+            <i class="fa fa-arrow-right float-right">&nbsp;</i>
+          </button>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- <div class="card">
     <div class="card-header" id="headingOne">
       <h5 class="mb-0">
         <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
@@ -16,7 +40,7 @@
       </h5>
     </div>
 
-    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion" style="">
+    <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion" style="">
       <div class="card-body">
         <h2>Cardiovascular Study</h2>
         <h4>Raleigh, North Carolina</h4>
@@ -143,7 +167,7 @@
         </a>
       </div>
     </div>
-  </div>
+  </div> -->
 </div>
 <!-- 
   allTrials.html END

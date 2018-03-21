@@ -55,6 +55,10 @@ module.exports = function(grunt,config){
          dest: '<%= config.buildDir %>/'
         },
         {
+         src: 'js/**/*',
+         dest: '<%= config.buildDir %>/'
+        },
+        {
          src: 'webfonts/**/*',
          dest: '<%= config.buildDir %>/'
         },
