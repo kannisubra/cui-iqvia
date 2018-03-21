@@ -1,6 +1,16 @@
 <!-- 
   trial1.html
  -->
+ <style>
+   .device-one{
+    background: url(/img/pic/fitbit-surge.png) 0px 15px no-repeat; 
+    padding-left: 90px;
+   }
+   .device-two{
+    background: url(/img/pic/fitbit-alta.png) 0px 15px no-repeat; 
+    padding-left: 75px;
+   }
+ </style>
 <div class="cui-action">
     <a ui-sref="applications.allTrials"><i class="fa fa-arrow-left">&nbsp;</i> BACK TO TRIAL SITES</a>
     <h3 class="cui-action__title">CT_CAR001</h3>
@@ -20,9 +30,9 @@
 
     <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
       <div class="card-body">
-        <div class="device-details">
+        <div class="device-details device-one" style="background: url(/img/pic/fitbit-surge.png) 0px 15px no-repeat; padding-left: 90px;">
           <h4>Subject is wearing:</h4>
-          <h2>FitBit Flex 2</h2>
+          <h2>FitBit Surge</h2>
         </div>
         <a ui-sref="applications.fitbitData1">
           <button class="btn btn-primary">View Statistics</button>
@@ -40,7 +50,7 @@
     </div>
     <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion" style="">
       <div class="card-body">
-        <div class="device-details">
+        <div class="device-details" style="background: url(/img/pic/fitbit-alta.png) 0px 15px no-repeat; padding-left: 75px;">
           <h4>Subject is wearing:</h4>
           <h2>FitBit Flex 2</h2>
         </div>
@@ -84,9 +94,9 @@
             <h4>Subject is wearing:</h4>
             <h2>FitBit Flex 2</h2>
           </div>
-          <a ui-sref="applications.fitbitData1">
+          <!-- <a ui-sref="applications.fitbitData1">
             <button class="btn btn-primary">View Statistics</button>
-          </a>
+          </a> -->
         </div>
     </div>
   </div>
@@ -104,9 +114,9 @@
           <h4>Subject is wearing:</h4>
           <h2>FitBit Flex 2</h2>
         </div>
-        <a ui-sref="applications.fitbitData1">
+        <!-- <a ui-sref="applications.fitbitData1">
           <button class="btn btn-primary">View Statistics</button>
-        </a>
+        </a> -->
       </div>
     </div>
   </div>
@@ -124,9 +134,9 @@
           <h4>Subject is wearing:</h4>
           <h2>FitBit Flex 2</h2>
         </div>
-        <a ui-sref="applications.fitbitData1">
+        <!-- <a ui-sref="applications.fitbitData1">
           <button class="btn btn-primary">View Statistics</button>
-        </a>
+        </a> -->
       </div>
     </div>
   </div>

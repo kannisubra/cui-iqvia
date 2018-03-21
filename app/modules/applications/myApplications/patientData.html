@@ -38,7 +38,7 @@
       color: #2B3A42;
     }
     .carousel-indicators {
-      top: 570px;
+      top: 650px;
     }
     .carousel-indicators li {
       width: 11px;
@@ -52,9 +52,17 @@
       background-color: #3DB3E1;
     }
     .carousel .carousel-inner .carousel-item {
-      height: 610px;
+      height: 680px;
     }
     .carousel .carousel-inner .carousel-item .chart {
+      width: 337px;
+      margin: 0 auto;
+      display: block;
+      border-top: 2px solid #C3DAE6;
+      padding-top: 20px;
+    }
+    .carousel .carousel-inner .carousel-item .chart-header {
+      clear: both;
       width: 337px;
       margin: 0 auto;
       display: block;
@@ -95,7 +103,7 @@
     }
  </style>
 <div class="cui-action">
-  <a ui-sref="applications.trialOverview"><i class="fa fa-arrow-left">&nbsp;</i> BACK TO CT_FAST002</a>
+  <a ui-sref="applications.trial2"><i class="fa fa-arrow-left">&nbsp;</i> BACK TO CT_FAST002</a>
   <a data-toggle="modal" data-target=".notification-modal">
     <span class="fa-stack fa float-right">
       <i class="fa fa-circle fa-stack-2x"></i>
@@ -111,17 +119,23 @@
     <div class="carousel-inner">
       <div class="carousel-item active">
         <h3 class="cui-action__title ">Subject #1</h3>
-        <div class="avatar float-left"><img src="/img/icon/avatar-pic-lg.png" alt=""></div>
+        <div class="avatar float-left"><img src="/img/icon/avatar-lg.png" alt=""></div>
         <div class="avatar-data float-left">
-          <h4>Active Minutes</h4>
-          <h2>156</h2>
-          <h4>Steps</h4>
-          <h2>4,328</h2>
+          <h4>Blood Glucose level</h4>
+          <h2>{{glucoseValue}} mg/dL</h2>
         </div>
-        <img class="chart" src="/img/pic/hr-day.png" alt="">
+        
+        <div class="chart-header">
+            <div class="heart-rate float-left">
+              <i class="fa fa-tint">&nbsp;</i> GLUCOSE
+            </div>
+            <div class="avg-bpm float-right">{{glucoseValue}} AVG BPM</div>
+          </div>
+          <div id="chart"></div>
+          <!-- <img id="chart2" src="/img/pic/hr-day.png" alt=""> -->
         <button type="button" class="btn btn-primary">Notify Subject</button>
       </div>
-      <div class="carousel-item">
+      <!-- <div class="carousel-item">
         <h3 class="cui-action__title ">Subject #1 <small>Last 30 days <i class="fa fa-angle-down">&nbsp;</i></small></h3>
         <div class="avatar float-left"><img src="/img/icon/avatar-lg.png" alt=""></div>
         <div class="avatar-data float-left">
@@ -133,11 +147,11 @@
         <img class="chart" src="/img/pic/hr-month.png" alt="">
         <button type="button" class="btn btn-primary">Sync to StudyHub</button>
         <p class="last-updated">Last sync to StudyHub 03/24/18</p>
-    </div>
-    <ol class="carousel-indicators">
+    </div> -->
+    <!-- <ol class="carousel-indicators">
       <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
       <li data-target="#carouselExampleIndicators" data-slide-to="1" class=""></li>
-    </ol>
+    </ol> -->
     <!-- <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
       <span class="sr-only">Previous</span>

@@ -13,10 +13,11 @@ angular.module('applications')
 	// 	console.log(err);
 	// })
 	
-	API.cui.getGroupTemplates2({'qs':[['parentGroupTemplateId','1493d12f-d8cc-4b73-845b-7088a5b833bb']]})
+	API.cui.getGroupTemplates2({'qs':[['parentGroupTemplateId','1493d12f-d8cc-4b73-845b-7088a5b833bb'],['sortBy','creation']]})
 	.then(res=>{
 		$scope.trialJSON = res;
-		console.log('trialJSON= '+$scope.trialJSON);
+		console.log('trialJSON= '+$scope.trialJSON+'\nroute: '+$scope.trialJSON[0].attributes[2].attributeType.id);
+
 		$scope.$apply();
 	}).fail(err=>{
 		console.log(err);
