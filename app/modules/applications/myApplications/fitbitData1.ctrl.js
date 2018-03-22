@@ -125,9 +125,6 @@ angular.module('applications')
             },
             point: {
                 show: false
-            },                        
-            size: {
-                width: 337
             },
             axis: {
                 x: {
@@ -153,9 +150,6 @@ angular.module('applications')
             },
             point: {
                 show: false
-            },                        
-            size: {
-                width: 337
             },
             axis: {
                 x: {

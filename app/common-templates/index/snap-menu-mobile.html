@@ -56,12 +56,12 @@
 </span>
 
 <!-- Trial Overview -->
-<span class="snap-menu--option" snap-close ui-sref="applications.trialOverview" ng-if="base.user.id">
+<!-- <span class="snap-menu--option" snap-close ui-sref="applications.patientData" ng-if="base.user.id">
   <span class="snap-menu__option-name">Trial Overview</span>
   <div>
     <cui-icon cui-svg-icon="cui:applications_v2" svg-class="snap-menu__icon" viewbox="0 0 49 49" preserveAspectRatio="xMidYMid meet" ></cui-icon>
   </div>
-</span>
+</span> -->
 
 <!-- FitBit Data 1 -->
 <span class="snap-menu--option" snap-close ui-sref="applications.fitbitData1" ng-if="base.user.id">
@@ -86,7 +86,13 @@
     <cui-icon cui-svg-icon="cui:applications_v2" svg-class="snap-menu__icon" viewbox="0 0 49 49" preserveAspectRatio="xMidYMid meet" ></cui-icon>
   </div>
 </span>
-
+<!-- Dexcom G5 Data -->
+<span class="snap-menu--option" snap-close ui-sref="applications.patientData" ng-if="base.user.id">
+  <span class="snap-menu__option-name">Dexcom G5 Data</span>
+  <div>
+    <cui-icon cui-svg-icon="cui:applications_v2" svg-class="snap-menu__icon" viewbox="0 0 49 49" preserveAspectRatio="xMidYMid meet" ></cui-icon>
+  </div>
+</span>
 <!-- Applications -->
 <!-- <span class="snap-menu--option" snap-close ui-sref="applications.myApplications" ng-if="base.user.id">
   <span class="snap-menu__option-name">{{'my-applications' | translate}}</span>

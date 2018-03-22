@@ -15,10 +15,10 @@
 </div>
 
 <!-- Trial Overview -->
-<div class="cui-desktop-menu__option" ui-sref="applications.trialOverview" ui-sref-active-nested="active" ng-if="base.user.id" ng-click="base.menu.desktop.close()">
+<!-- <div class="cui-desktop-menu__option" ui-sref="applications.trialOverview" ui-sref-active-nested="active" ng-if="base.user.id" ng-click="base.menu.desktop.close()">
   <span class="cui-desktop-menu__option-name">Trial Overview</span>
   <cui-icon cui-svg-icon="cui:applications_v2" svg-class="cui-desktop-menu__icon" preserveAspectRatio="xMidYMid meet"></cui-icon>
-</div>
+</div> -->
 
 <!-- FitBit Data 1 -->
 <div class="cui-desktop-menu__option" ui-sref="applications.fitbitData1" ui-sref-active-nested="active" ng-if="base.user.id" ng-click="base.menu.desktop.close()">
@@ -37,7 +37,11 @@
   <span class="cui-desktop-menu__option-name">FitBit Data 3</span>
   <cui-icon cui-svg-icon="cui:applications_v2" svg-class="cui-desktop-menu__icon" preserveAspectRatio="xMidYMid meet"></cui-icon>
 </div>
-  
+<!-- Dexcom G5 Data -->
+<div class="cui-desktop-menu__option" ui-sref="applications.patientData" ui-sref-active-nested="active" ng-if="base.user.id" ng-click="base.menu.desktop.close()">
+  <span class="cui-desktop-menu__option-name">Dexcom G5 Data</span>
+  <cui-icon cui-svg-icon="cui:applications_v2" svg-class="cui-desktop-menu__icon" preserveAspectRatio="xMidYMid meet"></cui-icon>
+</div>
 <!-- Kanni -->
 <!-- <div class="cui-desktop-menu__option" ui-sref="applications.myApplications" ui-sref-active-nested="active" ng-if="base.user.id" ng-click="base.menu.desktop.close()">
     <span class="cui-desktop-menu__option-name">Kanni's Page</span>

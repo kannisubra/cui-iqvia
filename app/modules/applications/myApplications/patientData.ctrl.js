@@ -9,7 +9,7 @@ angular.module('applications')
     $scope.glucoseValue = "reading device...";
 
     $scope.getDexcomG5 = function(){
-        API.cui.getUsersHeartRateHistory({'qs':[['sortBy','-creation'],['eventTemplateId','e3fc7967-0422-43ee-93b1-9d526220003a'],['deviceId','46cdaccb-a21c-4c4f-8bfc-64da49107b06'],['pageSize','30']]})
+        API.cui.getUsersHeartRateHistory({'qs':[['sortBy','-creation'],['eventTemplateId','dccc580d-b0ae-49db-a1e8-0fa613591b31'],['deviceId','057219fe-226c-40e2-a3fc-dc115a70ef27'],['pageSize','30']]})
         .then(res=>{
             $scope.trialJSON = res;
             console.log('$scope.trialJSON: '+$scope.trialJSON)
@@ -68,10 +68,7 @@ angular.module('applications')
             },
             point: {
                 show: false
-            },                        
-            size: {
-                width: 337
-            },
+            }, 
             axis: {
                 x: {
                     type: 'timeseries',                   
