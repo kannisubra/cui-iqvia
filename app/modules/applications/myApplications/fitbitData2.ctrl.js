@@ -1,38 +1,49 @@
 angular.module('applications')
-.controller('fitbitData2Ctrl', function(API,APIError,APIHelpers,DataStorage,Loader,User,$filter,$pagination,$q,$scope,$state,$stateParams,$http) {
+.controller('fitbitData2Ctrl', function(API,APIError,APIHelpers,DataStorage,Loader,User,$filter,$pagination,$q,$scope,$state,$stateParams,$http,$interval) {
 	const myApplications = this
     const userId = User.user.id
     const loaderName = 'myApplications.'
     let checkedLocalStorage = false
-    console.log('fitbitData2: onload: SONY');
 
     $scope.lightlyActiveMins = "reading device...";
     $scope.userSteps = "reading device...";
+    $scope.allMins = "reading device...";
+    $scope.allSteps = "reading defice...";
     
-    // SONY FIBIT
-    //Steps and Activity for Sony
-    $scope.getStepsMinutes = function(){
+    var getStepsMinutes = function(){
+        console.log('\nfitbitData2Ctrl\neventTemplateId: 37eaf6a0-14c7-47fd-a8d8-753dccd2f6f5\ndeviceId: 442687ae-06e7-458e-90ea-c3e88782c581');
 
         API.cui.getUsersActivityHistory({'qs':[['sortBy','-creation'],['eventTemplateId','37eaf6a0-14c7-47fd-a8d8-753dccd2f6f5'],['deviceId','442687ae-06e7-458e-90ea-c3e88782c581'],['pageSize','30']]})
             .then(res=>{
-                $scope.aggregateNum = res.length;
-                console.log('num:'+res.length);
-                
-                $scope.myHeartRate = res[0].datapoints[0].value;
-                console.log("restingHeartRate: "+$scope.myHeartRate);
-
-                $scope.lightlyActiveMins = res[0].datapoints[1].value;
-                console.log("lightlyActiveMinutes: "+$scope.lightlyActiveMins);
-
-                $scope.userSteps = res[0].datapoints[3].value;
-                console.log("steps: "+$scope.userSteps);
-                
+                var fitbitJSON1 = res[0];
                 $scope.allMins = 0;
                 $scope.allSteps = 0;
-                for (var i=0; i<res.length/2; i++){
-                    $scope.allMins += parseInt(res[i].datapoints[1].value);
-                    $scope.allSteps += parseInt(res[i].datapoints[3].value);
-                    console.log("res[i].datapoints[1].value"+res[i].datapoints[1].value+"\nallMins-last30: "+$scope.allMins+"\nallSteps-last30"+$scope.allSteps);
+                for (var key in res[0]){
+                    if(key==='datapoints'){
+                        var datapointsArray = fitbitJSON1[key];
+                        for (var name in datapointsArray){
+                            if (datapointsArray[name].name==='lightlyActiveMinutes'){
+                                console.log('Minutes='+ datapointsArray[name].value);
+                                $scope.lightlyActiveMins = datapointsArray[name].value;
+                                for (var i=0; i<res.length; i++){
+                                    $scope.allMins += parseInt($scope.lightlyActiveMins);
+                                }
+                                console.log("All Minutes: "+$scope.allMins);
+                            }
+                            if (datapointsArray[name].name==='steps'){
+                                console.log('Steps='+ datapointsArray[name].value);
+                                $scope.userSteps = datapointsArray[name].value;
+                                for (var i=0; i<res.length; i++){
+                                    $scope.allSteps += parseInt($scope.userSteps);
+                                }
+                                console.log("All Steps="+$scope.allSteps);
+                            }
+                            if (datapointsArray[name].name==='restingHeartRate'){
+                                $scope.myHeartRate = datapointsArray[name].value;
+                                console.log('HR='+ datapointsArray[name].value);
+                            }
+                        }
+                    }
                 }
                 $scope.$apply();
             }).fail(err=>{
@@ -40,12 +51,12 @@ angular.module('applications')
         })
     }
 
-    $scope.getStepsMinutes();
+    getStepsMinutes();
+    
+    var checkAgain = $interval(getStepsMinutes, 10000);
 
-    setInterval(function(){
-        $scope.lightlyActiveMins = "updating...";
-        $scope.userSteps = "updating...";
-        $scope.$apply();
-        $scope.getStepsMinutes();
-        }, 30000)
+    $scope.$on('$destroy', function() {
+        $interval.cancel(checkAgain );
+        console.log('STOP: deviceId:442687ae-06e7-458e-90ea-c3e88782c581');
+    });  
 })

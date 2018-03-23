@@ -4,14 +4,7 @@ angular.module('applications')
     const userId = User.user.id
     const loaderName = 'ecosystems.'
     let checkedLocalStorage = false
-	
-	// API.cui.getGroupTemplates({'qs':[['id','1493d12f-d8cc-4b73-845b-7088a5b833bb']]})
-	// .then(res=>{
-	// 	ecosystems.groupTemplateDetails = res;
-	// 	console.log("kanni"+ecosystems.groupTemplateDetails[0].name[0].text);
-	// }).fail(err=>{
-	// 	console.log(err);
-	// })
+	console.log("\nallTrialsCtrl");
 	
 	API.cui.getGroupTemplates2({'qs':[['parentGroupTemplateId','1493d12f-d8cc-4b73-845b-7088a5b833bb'],['sortBy','creation']]})
 	.then(res=>{
